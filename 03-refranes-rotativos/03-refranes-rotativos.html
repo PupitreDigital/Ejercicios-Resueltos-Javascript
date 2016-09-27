@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Serie Ejercicios Resueltos en Javascript - Ejercicio 3: Refranes rotativos</title>
+    <meta name="description" content="Muestra refranes por pantalla rotativamente">
+    <meta name="author" content="Chema Moreno - wwww.pupitredigital.com">
+</head>
+
+<body>
+    <p id="salida"></p>
+
+    <script>
+        var refranes = [        // el 1er elemento de un vector tiene índice 0 
+                        "El que la sigue, la consigue",     // refranes[0]
+                        "Más vale prevenir que curar",      // refranes[1]
+                        "Quien todo lo quiere, todo lo pierde",
+                        "No por mucho madrugar amanece más temprano",
+                        "Persona prevenida vale por dos"    // refranes[4]
+                    ],
+            ind = 0;            // índice refrán actual
+
+        setInterval(MuestraSiguienteRefran, 2000);  // Ejecutar cada 2 segundos la función MSR
+
+
+        function MuestraSiguienteRefran(){
+            ind++;              // pasamos al siguiente refrán
+            if(ind > 4){        // Si ya se han mostrado todos los refranes... 
+                ind = 0;        // ... muéstralos de nuevo desde el primero
+            }
+            document.getElementById("salida").innerHTML = refranes[ind];
+        }
+    </script>
+</body>
+
+</html>

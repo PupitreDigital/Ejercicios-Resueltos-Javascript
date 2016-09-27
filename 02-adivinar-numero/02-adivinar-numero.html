@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Serie Ejercicios resueltos en Javascript - Ejercicio 2: Adivina el número</title>
+    <meta name="description" content="Juego de adivinar un número del 1 al 10">
+    <meta name="author" content="Chema Moreno - wwww.pupitredigital.com">
+</head>
+
+<body>
+    <p>Adivina qué número he pensado del 1 al 10</p>
+    <input type="text" id="dato">
+    <button id="boton">Resolver</button>
+
+    <script>
+        var numero = Math.ceil( Math.random()*10 );     // genera el número al azar del 1 al 10
+
+        // Se programa el manejador de evento "click" del botón...
+
+        document.getElementById("boton").addEventListener("click", function(){
+            var entrada = document.getElementById("dato").value;    // se obtiene la entrada del usuario
+
+            // Se comprueba si hemos acertado el número...
+            if(entrada == numero){  // si el número entrado por el usuario es el mismo que el generado...
+                alert("¡ENHORABUENA, HAS ACERTADO EL NÚMERO! :-)"); // ¡Has acertado!
+                location.reload();                  // se recarga la página
+            }
+            else{                   // si en cambio no coinciden los dos números, has fallado...
+                alert("Lo siento, has fallado.\nEl número era el " + numero + ".\nPulsa Aceptar para volver a jugar.");
+                location.reload();
+            }
+        });
+    </script>
+</body>
+
+</html>

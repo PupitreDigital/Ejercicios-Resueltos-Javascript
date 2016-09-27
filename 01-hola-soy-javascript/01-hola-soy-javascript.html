@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Serie Ejercicios Resueltos en Javascript - Ejercicio 1: ¡Hola soy Javascript!</title>
+    <meta name="description" content="Javascript nos da la bienvenida y nos quiere conocer un poco">
+    <meta name="author" content="Chema Moreno - wwww.pupitredigital.com">
+</head>
+
+<body>
+    <h1>¡Hola, soy Javascript!</h1>
+    <p>Hola, soy JavaScript y me gustaría conocerte, ¿cómo te llamas y cuál es tu edad?</p>
+    Nombre: <input type="text" id="nombre">
+    Edad: <input type="text" id="edad">
+    <button id="boton">Confirmar</button>
+    <p id="salida"></p>        <!-- Aquí se mostrará lo que nos responda Javascript -->
+
+    <script>
+        document.getElementById("boton").addEventListener("click", function(){
+            var nombre = document.getElementById("nombre").value,
+                edad = document.getElementById("edad").value;
+
+            document.getElementById("salida").innerHTML = "¡Encantado de conocerte " + nombre + ", y bravo por esos " + edad + " años!";
+        });
+    </script>
+</body>
+
+</html>
